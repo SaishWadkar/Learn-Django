@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>INDEX</title>
+    <link rel="stylesheet"  href="{% static 'css/mycss.css' %}"></link
+  </head>
+  <body>
+    <h1>Home is here !</h1>
+    <img src="{% static 'images/img.jpg' %}" alt="bridge image" height="250" width="500">
+
+    <div class="data">
+      {% if employee %}
+
+        <table>
+          <thead>
+          <th>Name</th>
+          <th>Place</th>
+          <th>Date of joining</th>
+        </thead>
+          {% for i in employee %}
+        <tr>
+          <td>{{i.names}}</td>
+          <td>{{i.place}}</td>
+          <td>{{i.date_of_joining}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+      {% endif %}
+
+    </div>
+
+  </body>
+</html>
